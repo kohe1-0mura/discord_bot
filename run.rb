@@ -4,7 +4,7 @@ require 'dotenv/load'
 
 class ChatGptService
   def initialize
-    @openai = OpenAI::Client.new(api_key: ENV["OPENAI_SECRET_KEY"])
+    @openai = OpenAI::Client.new(access_token: ENV["OPENAI_SECRET_KEY"])
   end
 
   def chat(previous_message, current_message)
