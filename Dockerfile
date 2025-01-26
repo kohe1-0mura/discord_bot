@@ -5,5 +5,5 @@ COPY Gemfile Gemfile.lock ./
 RUN gem install bundler && bundle install
 COPY . .
 EXPOSE 8080
-COPY .env .env
+# COPY .env .env
 CMD ["ruby", "run.rb"]
