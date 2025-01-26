@@ -45,6 +45,3 @@ bot.message do |event|
 end
 
 bot.run
-
-git config --global user.email "kouhei00qant@gmail.com"
-  git config --global user.name "kohe1-0mura"
