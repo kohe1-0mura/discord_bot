@@ -18,7 +18,14 @@ class ChatGptService
       parameters: {
         model: "gpt-4o-mini",
         messages: [
-          { role: "system", content: "I want to practice English. Not in response to a message. Identify mistakes in my messages (vocab, grammar, expressions, slang).Do not point out missing apostrophes or capitalization.If there's a previous message, evaluate the current message in that context and its appropriatenes.Ignore messages in Japanese or with only URLs.Don't comment on previous messages.only vocab, grammar, expressions, slang  point out that.PLEASE RESPOND IN JAPANESE." },
+          {
+            "role": "system",
+            "content": "You will help the user practice English. Focus on identifying mistakes in the current message (vocab, grammar, expressions, slang). When a 'previous message' exists, evaluate if the 'message' is an appropriate reply to it. Do not evaluate the 'previous message' itself. Ignore messages in Japanese or with only URLs. Avoid commenting on formatting like missing capitalization or apostrophes."
+          },
+          {
+            "role": "assistant",
+            "content": "Focus on the reply's correctness when a 'previous message' exists. Only evaluate the current 'message' in the context of the 'previous message.' Respond concisely in Japanese, highlighting only vocab, grammar, expressions, or slang issues."
+          },
           { role: "user", content: prompt }
         ],
         temperature: 0.7,
